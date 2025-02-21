@@ -52,7 +52,6 @@ export default function App() {
   const [animes, setAnimes] = useState(animesData); {/* lift state dari Main*/ }
   const [selectedAnime, setSelectedAnime] = useState(animes[0]);
 
-
   function handleSelectedAnime(id) {
     const newAnime = animes.filter((anime) => anime.mal_id === id);
     setSelectedAnime(newAnime[0]);
