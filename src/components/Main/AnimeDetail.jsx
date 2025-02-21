@@ -1,20 +1,19 @@
 export default function AnimeDetail({ selectedAnime }) {
+    if (!selectedAnime) {
+        return <p>No anime selected</p>;
+    }
+
     return (
-        <div className="details">
-            <header>
-                <img src={selectedAnime.image} alt={`${selectedAnime.title} cover`} />
-                <div className="details-overview">
-                    <h2>{selectedAnime.title}</h2>
-                    <p>
-                        {selectedAnime.year} &bull; {selectedAnime.score}
-                    </p>
-                </div>
-            </header>
-            <section>
-                <p>
-                    <em>{selectedAnime.synopsis}</em>
-                </p>
-            </section>
+        <div className="anime-detail">
+            {selectedAnime.images && selectedAnime.images.jpg ? (
+                <img src={selectedAnime.images.jpg.image_url} alt={selectedAnime.title} />
+            ) : (
+                <p>No image available</p>
+            )}
+            <h2>{selectedAnime.title}</h2>
+            <p>{selectedAnime.synopsis || "No synopsis available"}</p>
+            <p>Year: {selectedAnime.year || "N/A"}</p>
+            <p>Score: {selectedAnime.score || "N/A"}</p>
         </div>
-    )
+    );
 }
