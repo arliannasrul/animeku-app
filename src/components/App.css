@@ -116,16 +116,16 @@ body {
 
 .main {
   margin-top: 2.4rem;
-  max-height: calc(100vh - 12rem - 3 * 5rem);
+
   display: flex;
   justify-content: center;
   gap: 2.4rem;
 }
 
-.main .box {
-  width: 42rem;
-  max-width: 42rem;
-  min-height: 5rem;
+.box {
+  width: 60rem;
+  max-width: 80rem;
+  min-height: 80rem;
   background-color: var(--color-background-100);
   border-radius: 1rem;
   overflow: scroll;
@@ -148,10 +148,61 @@ body {
   z-index: 999;
 }
 
-.list {
+.anime-list {
   list-style: none;
   padding: 0.8rem 0;
   overflow: scroll;
+  padding-left: 10rem;
+
+
+
+}
+
+.anime-detail {
+  position: relative;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #3e5b6d;
+  font-size: 1.2rem;
+}
+
+.anime-details {
+  display: flex;
+  align-self: center;
+  padding-top: 15rem;
+
+
+}
+
+.anime-info {
+  padding-left: 10px;
+  padding-top: 10px;
+  font-size: 1.1rem;
+}
+
+.anime-info h2 {
+  font-size: 2rem;
+  font-weight: bold;
+
+}
+
+.anime-meta {
+  padding-bottom: 10px;
+  padding-top: 5px;
+  font-size: 1.1rem;
+}
+
+.heading-anime {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.anime-details img {
+  width: 90%;
+  height: 90%;
+  padding: 10px;
+
 }
 
 .list-watched {
@@ -270,8 +321,37 @@ body {
     flex-direction: column;
   }
 
-  .main .box {
+  .box {
     margin: auto;
     width: 40rem;
+  }
+
+  .anime-details {
+    display: block;
+  }
+
+  .anime-details img {
+    width: 50%;
+    height: 50%;
+
+
+  }
+
+
+}
+
+@media (min-width: 100px) {
+  .box {
+    height: 100px;
+  }
+}
+
+@media (max-width: 720px) {
+  .box {
+    height: 100px;
+  }
+
+  .anime-details {
+    padding-top: 0px;
   }
 }
