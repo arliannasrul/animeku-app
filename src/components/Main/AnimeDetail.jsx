@@ -1,8 +1,10 @@
-export default function AnimeDetail({ selectedAnime }) {
+export default function AnimeDetail({ selectedAnime, loading, error }) {
+    if (loading) return <p className="loading-details">Loading......</p>;
     if (!selectedAnime) {
-        return <p>No anime selected</p>;
+        return <p className="no-anime-select">No anime selected</p>;
     }
 
+    if (error) return <p style={{ color: 'red' }}>{error}</p>;
     return (
         <div className="anime-details">
             {selectedAnime.images && selectedAnime.images.jpg ? (

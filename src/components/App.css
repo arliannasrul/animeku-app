@@ -152,18 +152,59 @@ body {
   list-style: none;
   padding: 0.8rem 0;
   overflow: scroll;
-  padding-left: 10rem;
+  padding-left: 10px;
 
+}
 
+.loading-anime-list {
+  display: flex;
+  justify-content: center;
+  /* Pusatkan secara horizontal */
+  align-items: center;
+  /* Pusatkan secara vertikal */
+  height: 100vh;
+  /* Gunakan tinggi penuh viewport */
+  font-size: 2rem;
+  font-weight: bold;
+}
 
+.loading-details {
+  display: flex;
+  justify-content: center;
+  /* Pusatkan secara horizontal */
+  align-items: center;
+  /* Pusatkan secara vertikal */
+  height: 100vh;
+  /* Gunakan tinggi penuh viewport */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.no-anime-select {
+  display: flex;
+  justify-content: center;
+  /* Pusatkan secara horizontal */
+  align-items: center;
+  /* Pusatkan secara vertikal */
+  height: 100vh;
+  /* Gunakan tinggi penuh viewport */
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .anime-detail {
   position: relative;
   margin-bottom: 10px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #3e5b6d;
+  border-bottom: 3px solid #3e5b6d;
   font-size: 1.2rem;
+  justify-content: center;
+  text-align: center;
+
+}
+
+.anime-detail img {
+  width: 30%;
 }
 
 .anime-details {

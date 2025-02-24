@@ -12,23 +12,40 @@ export default function App() {
   const [animes, setAnimes] = useState([]); // State untuk data anime
   const [selectedAnime, setSelectedAnime] = useState(null); // State untuk anime yang dipilih
   const [query, setQuery] = useState(''); // State untuk pencarian
+  const [loading, setLoading] = useState(true); // State untuk loading
+  const [error, setError] = useState(null); // State untuk menangani error
 
   // Fungsi untuk mengambil data dari API
   useEffect(() => {
     async function fetchAnimes() {
+
+      setError(null);
+
       try {
+        setLoading(true);
         const response = await fetch('https://api.jikan.moe/v4/anime');
+        if (!response.ok) throw new Error('Failed to fetch anime data');
+
         const data = await response.json();
         setAnimes(data.data); // Set data dari API ke state
-        setSelectedAnime(data.data[0]); // Pilih anime pertama secara default
-      } catch (error) {
-        console.error('Error fetching anime data:', error);
+        setSelectedAnime(data.data[null]); // Pilih anime pertama secara default
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     }
 
     fetchAnimes();
   }, []);
+  //fungsi untuk menangani pencarian dengan debounce
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setQuery(query);
+    }, 500); //delay 500ms agar tidak terlalu sering update
 
+    return () => clearTimeout(timer); //cleanup timer jika user mengetik cepat
+  }, [query]);
   // Fungsi untuk menangani pencarian
   function handleSearch(query) {
     setQuery(query);
@@ -54,10 +71,10 @@ export default function App() {
       </Navbar>
       <Main>
         <Box>
-          <AnimeList animes={filteredAnimes} onSelectedAnime={handleSelectedAnime} />
+          <AnimeList animes={filteredAnimes} onSelectedAnime={handleSelectedAnime} query={query} loading={loading} />
         </Box>
         <Box>
-          <AnimeDetail selectedAnime={selectedAnime} />
+          <AnimeDetail selectedAnime={selectedAnime} error={error} loading={loading} />
         </Box>
       </Main>
     </>
