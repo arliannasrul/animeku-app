@@ -1,7 +1,7 @@
 export default function AnimeList({ animes, onSelectedAnime, loading, error, query }) {
     if (loading) return <p className="loading-anime-list">Loading anime list...</p>;
     if (error) return <p style={{ color: 'red' }}>{error}</p>;
-    if (query && animes.length === 0) return <p>No anime found.</p>;
+    if (query && animes.length === 0) return <p className="no-anime">No anime found.</p>;
     return (
         <ul className="anime-list">
             {animes.map((anime) => (

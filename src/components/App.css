@@ -123,9 +123,9 @@ body {
 }
 
 .box {
-  width: 60rem;
+  width: 70rem;
   max-width: 80rem;
-  min-height: 80rem;
+  min-height: 70rem;
   background-color: var(--color-background-100);
   border-radius: 1rem;
   overflow: scroll;
@@ -192,6 +192,16 @@ body {
   font-weight: bold;
 }
 
+.no-anime {
+ display:flex;
+  justify-content:center;
+  align-items:center;
+  Height:  100vh;
+  font-size: 2rem;
+  font-weight: bold;
+
+
+}
 .anime-detail {
   position: relative;
   margin-bottom: 10px;
