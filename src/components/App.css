@@ -257,11 +257,19 @@ body {
   padding-bottom: 10px;
   padding-top: 5px;
   font-size: 1.1rem;
+  display:grid;
+  grid-template-columns: auto 1fr; 
+ 
 }
 
-.anime-meta strong {
- 
 
+.anime-meta p {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Jarak kecil antara label dan value */
+  margin-bottom: 0.4rem;
+  padding-right: 5rem;
+  
 }
 .heading-anime {
   font-size: 1.6rem;
