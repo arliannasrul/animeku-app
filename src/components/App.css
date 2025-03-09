@@ -213,8 +213,9 @@ body {
   font-size: 1.2rem;
   justify-content: center;
   text-align: center;
-  transition: 0.4s ease-in-out;
+  transition: background 0.4s ease-in;
   cursor: pointer;
+ 
 }
 
 .anime-detail:hover {
@@ -224,7 +225,7 @@ body {
 
 .anime-detail.selected {
   background-color: rgba(0, 150, 255, 0.2); /* Warna latar belakang saat dipilih */
-  border-left: 5px solid #0096ff; /* Tambahkan garis kiri sebagai indikator */
+  box-shadow: inset 5px 0 0 #0096ff;
 
 }
 .anime-detail img {
