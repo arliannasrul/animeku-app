@@ -32,7 +32,7 @@ export default function App() {
       } catch (err) {
         setError(err.message);
       } finally {
-        setLoading(false);
+        setLoading(false); 
       }
     }
 
@@ -56,7 +56,7 @@ export default function App() {
     anime.title.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Fungsi untuk menangani anime yang dipilih
+  // Fungsi untuk menangani anime yang dipilh 
   function handleSelectedAnime(id) {
     const selected = animes.find((anime) => anime.mal_id === id);
     setSelectedAnime(selected);

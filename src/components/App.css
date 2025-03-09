@@ -152,8 +152,10 @@ body {
   list-style: none;
   padding: 0.8rem 0;
   overflow: scroll;
-  padding-left: 10px;
+  padding-left: 8px;
+  
 
+  
 }
 
 .loading-anime-list {
@@ -204,17 +206,30 @@ body {
 }
 .anime-detail {
   position: relative;
-  margin-bottom: 10px;
-  padding-bottom: 20px;
+ 
+  padding-top:10px;
+  padding-bottom:10px;
   border-bottom: 3px solid #3e5b6d;
   font-size: 1.2rem;
   justify-content: center;
   text-align: center;
-
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
 }
 
+.anime-detail:hover {
+
+  background-color: rgba(0, 149, 255, 0.075);
+}
+
+.anime-detail.selected {
+  background-color: rgba(0, 150, 255, 0.2); /* Warna latar belakang saat dipilih */
+  border-left: 5px solid #0096ff; /* Tambahkan garis kiri sebagai indikator */
+
+}
 .anime-detail img {
   width: 30%;
+  
 }
 
 .anime-details {
@@ -256,114 +271,7 @@ body {
 
 }
 
-.list-watched {
-  height: calc(100% - 9rem);
-}
 
-.list li {
-  position: relative;
-  display: grid;
-  grid-template-columns: 4rem 1fr;
-  grid-template-rows: auto auto;
-  column-gap: 2.4rem;
-  font-size: 1.6rem;
-  align-items: center;
-  padding: 1.6rem 3.2rem;
-  border-bottom: 1px solid #3e5b6d;
-}
-
-.list.list-anime li {
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.list.list-movies li:hover {
-  background-color: var(--color-background-100);
-}
-
-.list img {
-  width: 100%;
-  grid-row: 1 / -1;
-}
-
-.list h3 {
-  font-size: 1.8rem;
-}
-
-.list div {
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
-}
-
-.list p {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.btn-delete {
-  position: absolute;
-  right: 2.4rem;
-
-  height: 1.8rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--color-red);
-  color: var(--color-background-900);
-  font-size: 0.9rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.btn-delete:hover {
-  background-color: var(--color-red-dark);
-}
-
-/* ******* */
-
-.details {
-  line-height: 1.4;
-  font-size: 1.4rem;
-}
-
-.details header {
-  display: flex;
-}
-
-.details section {
-  padding: 2rem 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
-
-.details img {
-  width: 40%;
-}
-
-.details-overview {
-  width: 100%;
-  padding: 2rem 2.4rem;
-  background-color: var(--color-background-100);
-  display: flex;
-  flex-direction: column;
-  gap: 1.4rem;
-}
-
-.details-overview h2 {
-  font-size: 2rem;
-  line-height: 1.1;
-}
-
-.details-overview p {
-  display: flex;
-  font-size: 1.3rem;
-  align-items: center;
-  gap: 0.8rem;
-}
 
 /* MEDIA QUERY */
 
