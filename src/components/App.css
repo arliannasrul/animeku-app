@@ -259,6 +259,10 @@ body {
   font-size: 1.1rem;
 }
 
+.anime-meta strong {
+ 
+
+}
 .heading-anime {
   font-size: 1.6rem;
   font-weight: bold;
@@ -271,7 +275,9 @@ body {
   padding: 10px;
 
 }
-
+.synopsis {
+  font-style: italic;
+}
 
 
 /* MEDIA QUERY */
